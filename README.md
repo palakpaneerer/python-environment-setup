@@ -60,7 +60,8 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 6. Use like `pyenv install 3.12.3 and pyenv install 3.11.1` to install Python versions you need
 7. Use `pyenv versions` to check all Python versions installed
 8. Use `pyenv global 3.12.3` to specify Python version that you want to use
-
+9. Use pyenv versions to check the Python versions used currently
+10. Use `python --version` to check the Python versions used currently as well
 
 ## 7. Install poetry
 Install the Python versions you need. For example:
