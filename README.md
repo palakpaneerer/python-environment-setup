@@ -52,7 +52,6 @@ Checking the versions
 - `poetry --version`
 ![versions check](https://github.com/user-attachments/assets/24cd4872-f6ce-4285-a103-acd1a7ac7f8c)
 
-
 ## 6. Install pyenv
 1. Launch Windows PowerShell as Administrator
 2. Use `Set-ExecutionPolicy RemoteSigned`, to eable to install pyenv on Windows Powershell normal mode
@@ -60,7 +59,7 @@ Checking the versions
 4. Use `Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"`
 ![install pyenv](https://github.com/user-attachments/assets/83d2654c-d447-46c5-b563-b40b78d228c4)
 5. Use `pyenv install --list` to list installable Python versions
-6. Use like `pyenv install 3.12.3 and pyenv install 3.11.1` to install Python versions you need
+6. Use like `pyenv install 3.12.3` and `pyenv install 3.11.1` to install Python versions you need
 7. Use `pyenv versions` to check all Python versions installed
 8. Use `pyenv global 3.12.3` to specify Python version that you want to use
 9. Use pyenv versions to check the Python versions used currently
@@ -85,43 +84,35 @@ pyproject.toml: Defines the required packages for the project. You can manually 
 poetry.lock: Stores the exact versions of installed packages. This file should not be manually edited.
 16. Enter the project’s virtual environment: `poetry shell`  
     Note: If this command fails, you need to install the poetry-plugin-shell plugin: `poetry self add poetry-plugin-shell`
-    For more information on enabling the poetry shell command:
-    Reddit discussion: https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/
-    Plugin documentation: https://python-poetry.org/docs/cli/#script-project
-    Github Document: https://github.com/python-poetry/poetry-plugin-shell
+    For more information on enabling the poetry shell command:  
+    Reddit discussion: https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/  
+    Plugin documentation: https://python-poetry.org/docs/cli/#script-project  
+    Github Document: https://github.com/python-poetry/poetry-plugin-shell  
 18. Exit the virtual environment by running: `deactivate`
 19. To run your Python script with the installed packages (e.g., numpy), enter the virtual environment with poetry shell and use the following command in the VS Code terminal: `python myproject\script.py`
 
 
-
-
-
-Process
-なので、新しく環境を作る際は、
-1. folder作成
-2. poetry new myproject
-3. cd myproject
-4. サブディレクトリのmyprojectにソースコードを保存していく
-5. プロジェクトフォルダー（親の方）の中でpoetry installすることでpoetry.lockを生成できる
-6. パッケージのインストール poetry add numpy　（VSコードのターミナルからできる。）
-7. poetry remove numpyでアンインストール
-8. 
-
-
+## 8. Process Flow to make a new project from the second time
+1. Create a folder.
+2. Run `poetry new myproject` to create a new Poetry project.
+3. Navigate to the project folder using cd myproject.
+4. Save your source code in the myproject subdirectory.
+5. Run `poetry install` in the parent project folder to generate the poetry.lock file.
+6. Go to the environment by runnig: `poetry shell`. Note: If impossible, use `poetry self add poetry-plugin-shell` first.
+7. Install packages, such as numpy, by running `poetry add numpy` (this can also be done from the VS Code terminal).
+8. Exit the virtual environment by running: `deactivate`
 
 ## Note
 Don't use pip and conda at the same time. Both are version management tools, so they can confuse systems.
 - It is not that virtual environments can use the packages in the base environment and supplement other required packages.
 - It is common practice to list frequently used packages in a requirements.txt file and then install them all at once using *pip install -r requirements.txt*.
-
-
+  
 ## Knowledge
 - pip: Pip Installs Packages (Python's standard package manager)
 - The pip can be used after installing Python.
 - If you uninstall Python, you no longer use pip.
 - If you uninstall Python, pip will also be removed, or at least will no longer work.
 - Even if the pip command remains on your system, it will not work because it does not have the Python to run it.
-
 
 ## Reference
 - 初心者は何を使えばいい？【Pythonの仮想環境を比較】〜オススメを紹介 〜  
