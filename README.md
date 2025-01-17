@@ -23,9 +23,7 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 
 ## 4. Uninstall Anaconda
 1. Open Anaconda Prompt using the Windows search
-![image](https://github.com/user-attachments/assets/c9ae0bd4-851b-4e0a-9a86-302366277327)
 ![anaconda prompt](https://github.com/user-attachments/assets/b5e0e885-e7c4-4d0b-8b02-438971892016)
-
 3. Install anaconda-clean package
    `conda install anaconda-clean`
    When asked "Proceed([y]/n)?", enter y and press Enter.  
@@ -33,13 +31,10 @@ Demerit: It is difficult to convey this virtual environment to others with this 
    `anaconda-clean --yes`  
    -- yes means to skip to be asked for confirmation of each module for uninstallation.
    Got a backup automatically like C:\Users\username\.anaconda_backup\2025-01-17T094734 
-5. Open explore and delete anaconda3\envs folder and anaconda3\pkgs in user folder
-![image](https://github.com/user-attachments/assets/524538e7-afe8-49c5-9663-1d59d392664b)
-
-
-6. 
-7. エクスプローラーを開き、ユーザーフォルダ内の環境フォルダ（anaconda3\envs）とパッケージフォルダ（anaconda3\pkgs）を削除します。
-![image](https://github.com/user-attachments/assets/c6c98b63-5a34-4b8c-af62-8a91eceda493)
+5. Open explore and delete anaconda3\envs folder and anaconda3\pkgs in user folder  (Note: The anaconda3 folder might be named anaconda in some formats.)
+![delete files](https://github.com/user-attachments/assets/e2c4a377-d294-46a8-a1c1-2a431ce735fc)
+6. Unistall anaconda
+![uninstall anaconda](https://github.com/user-attachments/assets/9a7bb7a4-0bbb-41e7-b2b4-ae6d0b2ad4b1)
 
 
 
