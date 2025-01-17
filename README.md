@@ -14,10 +14,28 @@ Guide for setting up Python on Windows 11
 ## 3. Summary
 ### Adopt
 - 'pyenv' for Python's version management
-- 'poetry' for modules version management 
+- 'poetry' for modules version management  
 Merit: It is possible to convey this virtual environment to others with this method.
 ### Also, the following method is for novices
 - 'pyenv' for Python's version management 
-- 'venv' for modules version management 
+- 'venv' for modules version management  
 Demerit: It is difficult to convey this virtual environment to others with this method.
 
+
+## Note
+- Don't use pip and conda at the same time. Both are version management tools. So systems will have confusion.
+
+## Knowledge
+- pip: Pip Installs Packages (Python's standard package manager)
+- The pip can be used after installing Python.
+- If you uninstall Python, you no longer use pip.
+- If you uninstall Python, pip will also be removed, or at least will no longer work.
+- Even if the pip command remains on your system, it will not work because it does not have the Python to run it.
+
+
+## Reference
+- 初心者は何を使えばいい？【Pythonの仮想環境を比較】〜オススメを紹介 〜  
+https://www.youtube.com/watch?v=r4SkIhQThe0&t=31s  
+- 【Mac大手術】ぐちゃぐちゃだったPythonの環境構築をやり直した話【さよならAnaconda】
+https://qiita.com/A7_data/items/88e3f5f3428744ff3473
+- 
