@@ -21,6 +21,10 @@ Merit: It is possible to convey this virtual environment to others with this met
 - 'venv' for modules version management  
 Demerit: It is difficult to convey this virtual environment to others with this method.
 
+### Procedure Flow
+1. Uninstall Anaconda
+2. 
+
 ## 4. Uninstall Anaconda
 1. Open Anaconda Prompt using the Windows search
 ![anaconda prompt](https://github.com/user-attachments/assets/b5e0e885-e7c4-4d0b-8b02-438971892016)
@@ -39,7 +43,10 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 
 
 ## Note
-- Don't use pip and conda at the same time. Both are version management tools. So systems will have confusion.
+Don't use pip and conda at the same time. Both are version management tools, so they can confuse systems.
+- It is not that virtual environments can use the packages in the base environment and supplement other required packages.
+- It is common practice to list frequently used packages in a requirements.txt file and then install them all at once using *pip install -r requirements.txt*.
+
 
 ## Knowledge
 - pip: Pip Installs Packages (Python's standard package manager)
