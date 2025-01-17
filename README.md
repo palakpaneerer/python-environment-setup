@@ -24,10 +24,12 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 ## 4. Uninstall Anaconda
 1. Open Anaconda Prompt using the Windows search
 ![image](https://github.com/user-attachments/assets/c9ae0bd4-851b-4e0a-9a86-302366277327)
-2. Install anaconda-clean package
+![anaconda prompt](https://github.com/user-attachments/assets/b5e0e885-e7c4-4d0b-8b02-438971892016)
+
+3. Install anaconda-clean package
    `conda install anaconda-clean`
    When asked "Proceed([y]/n)?", enter y and press Enter.  
-3. Conduct anaconda-clean
+4. Conduct anaconda-clean
    `anaconda-clean --yes`  
    -- yes means to skip to be asked for confirmation of each module for uninstallation.
    Got a backup automatically like C:\Users\username\.anaconda_backup\2025-01-17T094734 
