@@ -21,10 +21,14 @@ Merit: It is possible to convey this virtual environment to others with this met
 - 'venv' for modules version management  
 Demerit: It is difficult to convey this virtual environment to others with this method.
 
-### Procedure Flow
-1. Uninstall Anaconda
-2. 現状確認
-3. 
+### Process Menu
+### Process Flow for the first time
+4-1. Uninstall Anaconda
+4-2. Check the current state
+4-3. Install pyenv
+4-4. Install poetry
+
+### Process Flow to make a new project from the second time
 
 ## 4. Uninstall Anaconda
 1. Open Anaconda Prompt using the Windows search
@@ -41,19 +45,18 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 6. Unistall anaconda
 ![uninstall anaconda](https://github.com/user-attachments/assets/9a7bb7a4-0bbb-41e7-b2b4-ae6d0b2ad4b1)
 
-
-## 5. 現状確認 python, pyenv, poetry
-- Checking versions
-`python --version`
-`pyenv --version`
-`poetry --version`
+## 5. Check The Current State - python, pyenv, poetry
+Checking the versions
+- `python --version`
+- `pyenv --version`
+- `poetry --version`
 ![versions check](https://github.com/user-attachments/assets/24cd4872-f6ce-4285-a103-acd1a7ac7f8c)
 
 
 ## 6. Install pyenv
 1. Launch Windows PowerShell as Administrator
 2. Use `Set-ExecutionPolicy RemoteSigned`, to eable to install pyenv on Windows Powershell normal mode
-3. Open Windows Powershell as normal version
+3. Open Windows Powershell as the normal version
 4. Use `Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"`
 ![install pyenv](https://github.com/user-attachments/assets/83d2654c-d447-46c5-b563-b40b78d228c4)
 5. Use `pyenv install --list` to list installable Python versions
@@ -64,30 +67,33 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 10. Use `python --version` to check the Python versions used currently as well
 
 ## 7. Install poetry
-Install the Python versions you need. For example:
+1. Open PowerShell and run the following command to install Poetry: `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -`
+2. Configure the system Path by adding %APPDATA%\Python\Scripts as a new entry
+3. Close and reopen PowerShell.
+4. Verify the installation by running: `poetry -V` or `poetry --version`
+5. Set the default behavior to manage packages per project by running: `poetry config virtualenvs.in-project true`
+6. Navigate to the project folder: `cd C:\Users\jinno\Desktop\environment_test`
+9. Create a new Poetry project: `poetry new myproject`
+10. Change into the newly created project directory: `cd myproject`
+11. Save your source code in the myproject subdirectory
+12. Run the following command in the parent project folder to generate the poetry.lock file: `poetry install`
+    Note: Do not manually edit the poetry.lock file, as it is managed by Poetry.
+13. Install packages using Poetry: `poetry add numpy` and `poetry add requests==2.32.2`
+14. Uninstall a package if needed: `poetry remove requests`
+15. Key files managed by Poetry:
+pyproject.toml: Defines the required packages for the project. You can manually edit this file to update package versions (e.g., "numpy==2.2.1") and run `poetry update` to apply changes.
+poetry.lock: Stores the exact versions of installed packages. This file should not be manually edited.
+16. Enter the project’s virtual environment: `poetry shell`  
+    Note: If this command fails, you need to install the poetry-plugin-shell plugin: `poetry self add poetry-plugin-shell`
+    For more information on enabling the poetry shell command:
+    Reddit discussion: https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/
+    Plugin documentation: https://python-poetry.org/docs/cli/#script-project
+    Github Document: https://github.com/python-poetry/poetry-plugin-shell
+18. Exit the virtual environment by running: `deactivate`
+19. To run your Python script with the installed packages (e.g., numpy), enter the virtual environment with poetry shell and use the following command in the VS Code terminal: `python myproject\script.py`
 
-1. Powershellで
-2. (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
-3. Pathの設定　%APPDATA%\Python\Scriptsを新規追加する。
-4. Powershellをいったん閉じて再度起動する。
-5. poetry -V　またはpoetry --versionでインストールできているか確認する。
-6. poetry config virtualenvs.in-project trueでプロジェクトごとにpoetryでパッケージ管理することをデフォルトとする。
-7. C:\Users\jinno\Desktop\environment_testに移動
-8. poetry new myproject
-9. cd myproject
-10. サブディレクトリのmyprojectにソースコードを保存していく
-11. プロジェクトフォルダー（親の方）の中でpoetry installすることでpoetry.lockを生成できる。poetry.lockは基本的に手動で書き換えない。
-12. パッケージのインストール poetry add numpy
-13. poetry add requests==2.32.2も試しにインストールしてみる
-14. poetry remove requestsでuninstallもできる
-pyproject.toml: 必要なパッケージの定義　poroject.tomlにて手動でバージョンを変更し、poetry updateでアップデートできる。"numpy==2.2.1"
-poetry.lock: 実際にインストールされているパッケージ情報
 
-15. poetry shellでこの環境内に入れる。　poetry self add poetry-plugin-shellでインストールしないとactivateできない。
-16. https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/　poetry shellは上記をしないと使えない
-17. https://github.com/python-poetry/poetry-plugin-shell
-18. deactivateでこの環境から抜け出せる。
-19. poetry shellで入った状態でVS codeのターミナルからpython myproject\script.pyでnumpyを持ったpythonを動かせる。
+
 
 
 Process
@@ -116,8 +122,6 @@ Don't use pip and conda at the same time. Both are version management tools, so 
 - If you uninstall Python, pip will also be removed, or at least will no longer work.
 - Even if the pip command remains on your system, it will not work because it does not have the Python to run it.
 
-## 懸念点
-- もしかしたらpipでインストールしたもの全てを削除してからpythonをuninstallしないといけない。
 
 ## Reference
 - 初心者は何を使えばいい？【Pythonの仮想環境を比較】〜オススメを紹介 〜  
@@ -130,4 +134,9 @@ https://mochi-mochi-mochiko.com/windows11-anaconda-uninstall/#toc2
 https://github.com/pyenv-win/pyenv-win
 
 https://python-poetry.org/docs/#installing-with-the-official-installer
+
+poetry shell problem
+https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/
+https://python-poetry.org/docs/cli/#script-project
+https://github.com/python-poetry/poetry-plugin-shell
 
