@@ -23,7 +23,8 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 
 ### Procedure Flow
 1. Uninstall Anaconda
-2. 
+2. 現状確認
+3. 
 
 ## 4. Uninstall Anaconda
 1. Open Anaconda Prompt using the Windows search
@@ -40,6 +41,29 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 6. Unistall anaconda
 ![uninstall anaconda](https://github.com/user-attachments/assets/9a7bb7a4-0bbb-41e7-b2b4-ae6d0b2ad4b1)
 
+
+## 5. 現状確認 python, pyenv, poetry
+- Checking versions
+`python --version`
+`pyenv --version`
+`poetry --version`
+![versions check](https://github.com/user-attachments/assets/24cd4872-f6ce-4285-a103-acd1a7ac7f8c)
+
+
+## 6. Install pyenv
+1. Launch Windows PowerShell as Administrator
+2. Use `Set-ExecutionPolicy RemoteSigned`, to eable to install pyenv on Windows Powershell normal mode
+3. Open Windows Powershell as normal version
+4. Use `Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"`
+![install pyenv](https://github.com/user-attachments/assets/83d2654c-d447-46c5-b563-b40b78d228c4)
+5. Use `pyenv install --list` to list installable Python versions
+6. Use like `pyenv install 3.12.3 and pyenv install 3.11.1` to install Python versions you need
+7. Use `pyenv versions` to check all Python versions installed
+8. Use `pyenv global 3.12.3` to specify Python version that you want to use
+
+
+## 7. Install poetry
+Install the Python versions you need. For example:
 
 
 ## Note
