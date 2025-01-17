@@ -22,13 +22,13 @@ Merit: It is possible to convey this virtual environment to others with this met
 Demerit: It is difficult to convey this virtual environment to others with this method.
 
 ### Process Menu
-### Process Flow for the first time
-4-1. Uninstall Anaconda
-4-2. Check the current state
-4-3. Install pyenv
-4-4. Install poetry
+#### --- Process Flow for the first time ---
+4-1. Uninstall Anaconda  
+4-2. Check the current state  
+4-3. Install pyenv  
+4-4. Install poetry  
 
-### Process Flow to make a new project from the second time
+#### --- Process Flow to make a new project from the second time ---
 
 ## 4. Uninstall Anaconda
 1. Open Anaconda Prompt using the Windows search
