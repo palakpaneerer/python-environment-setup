@@ -66,6 +66,41 @@ Demerit: It is difficult to convey this virtual environment to others with this 
 ## 7. Install poetry
 Install the Python versions you need. For example:
 
+1. Powershellで
+2. (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+3. Pathの設定　%APPDATA%\Python\Scriptsを新規追加する。
+4. Powershellをいったん閉じて再度起動する。
+5. poetry -V　またはpoetry --versionでインストールできているか確認する。
+6. poetry config virtualenvs.in-project trueでプロジェクトごとにpoetryでパッケージ管理することをデフォルトとする。
+7. C:\Users\jinno\Desktop\environment_testに移動
+8. poetry new myproject
+9. cd myproject
+10. サブディレクトリのmyprojectにソースコードを保存していく
+11. プロジェクトフォルダー（親の方）の中でpoetry installすることでpoetry.lockを生成できる。poetry.lockは基本的に手動で書き換えない。
+12. パッケージのインストール poetry add numpy
+13. poetry add requests==2.32.2も試しにインストールしてみる
+14. poetry remove requestsでuninstallもできる
+pyproject.toml: 必要なパッケージの定義　poroject.tomlにて手動でバージョンを変更し、poetry updateでアップデートできる。"numpy==2.2.1"
+poetry.lock: 実際にインストールされているパッケージ情報
+
+15. poetry shellでこの環境内に入れる。　poetry self add poetry-plugin-shellでインストールしないとactivateできない。
+16. https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/　poetry shellは上記をしないと使えない
+17. https://github.com/python-poetry/poetry-plugin-shell
+18. deactivateでこの環境から抜け出せる。
+19. poetry shellで入った状態でVS codeのターミナルからpython myproject\script.pyでnumpyを持ったpythonを動かせる。
+
+
+なので、新しく環境を作る際は、
+1. folder作成
+2. poetry new myproject
+3. cd myproject
+4. サブディレクトリのmyprojectにソースコードを保存していく
+5. プロジェクトフォルダー（親の方）の中でpoetry installすることでpoetry.lockを生成できる
+6. パッケージのインストール poetry add numpy　（VSコードのターミナルからできる。）
+7. poetry remove numpyでアンインストール
+8. 
+
+
 
 ## Note
 Don't use pip and conda at the same time. Both are version management tools, so they can confuse systems.
@@ -91,4 +126,7 @@ https://qiita.com/A7_data/items/88e3f5f3428744ff3473
 - Windows11でAnaconda（Python）を完全にアンインストールする方法
 https://mochi-mochi-mochiko.com/windows11-anaconda-uninstall/#toc2
 
+https://github.com/pyenv-win/pyenv-win
+
+https://python-poetry.org/docs/#installing-with-the-official-installer
 
