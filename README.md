@@ -130,12 +130,11 @@ https://www.youtube.com/watch?v=r4SkIhQThe0&t=31s
 https://qiita.com/A7_data/items/88e3f5f3428744ff3473
 - Windows11でAnaconda（Python）を完全にアンインストールする方法
 https://mochi-mochi-mochiko.com/windows11-anaconda-uninstall/#toc2
-
+- Install pyenv-win
 https://github.com/pyenv-win/pyenv-win
-
+- Install poetry
 https://python-poetry.org/docs/#installing-with-the-official-installer
-
-poetry shell problem
+- poetry shell problem
 https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/
 https://python-poetry.org/docs/cli/#script-project
 https://github.com/python-poetry/poetry-plugin-shell
