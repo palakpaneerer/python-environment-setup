@@ -14,10 +14,10 @@ Guide for setting up Python on Windows 11
 ## 3. Summary
 ### Adopt
 - 'pyenv' for Python's version management
-- 'poetry' for modules version management  
+- 'poetry' for modules version management 
 Merit: It is possible to convey this virtual environment to others with this method.
 ### Also, the following method is for novices
 - 'pyenv' for Python's version management 
-- 'venv' for modules version management  
+- 'venv' for modules version management 
 Demerit: It is difficult to convey this virtual environment to others with this method.
 
