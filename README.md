@@ -90,6 +90,7 @@ poetry.lock: 実際にインストールされているパッケージ情報
 19. poetry shellで入った状態でVS codeのターミナルからpython myproject\script.pyでnumpyを持ったpythonを動かせる。
 
 
+Process
 なので、新しく環境を作る際は、
 1. folder作成
 2. poetry new myproject
