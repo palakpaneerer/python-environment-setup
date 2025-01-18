@@ -108,6 +108,7 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 | **Command**                     | **Example**                                | **Purpose**                                                                                   |
 |----------------------------------|--------------------------------------------|-----------------------------------------------------------------------------------------------|
 | **pyenv**                       |                                            |                                                                                               |
+| `pyenv install --list`          | `pyenv install --list`                     | Lists all available Python versions.                                                         |
 | `pyenv install [version]`       | `pyenv install 3.12.3`                     | Installs the specified Python version.                                                       |
 | `pyenv versions`                | `pyenv versions`                           | Lists all installed Python versions.                                                         |
 | `pyenv global [version]`        | `pyenv global 3.12.3`                      | Sets the specified Python version as the global default.                                      |
