@@ -120,7 +120,7 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 | `poetry self add poetry-plugin-shell` | `poetry self add poetry-plugin-shell`    | Installs the shell plugin if `poetry shell` does not work.                                   |
 | `poetry update`                 | `poetry update`                            | Updates packages based on the `pyproject.toml` file.                                         |
 | `poetry add [package-name]`     | `poetry add numpy`                         | Adds a new package to the project.                                                           |
-| `poetry remove [package-name]   | `poetry remove numpy`                      | Removes a package from the project and updates pyproject.toml and poetry.lock.               | 
+| `poetry remove [package-name]`  | `poetry remove numpy`                      | Removes a package from the project and updates pyproject.toml and poetry.lock.               | 
 | `poetry env info`               | `poetry env info`                          | Displays basic information about the virtual environment.                                    |
 
 **Frequently used package installation**
@@ -159,3 +159,5 @@ https://python-poetry.org/docs/cli/#script-project
 https://github.com/python-poetry/poetry-plugin-shell
 - 【Poetry】Poetryのチートシート
 https://qiita.com/uchksh/items/b027a3200fd5171caeb8
+- Windows 10 + Python + Poetry + pyenv-win の Visual Studio Code で Jupyter Notebook を利用
+https://qiita.com/kerobot/items/3726208cb13532b4d981
