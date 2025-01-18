@@ -97,7 +97,7 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 ## 5. Process Flow to make a new project from the second time
 1. Create a folder.
 2. Run `poetry new myproject` to create a new Poetry project.
-3. Navigate to the project folder using `cd myproject`.
+3. Navigate to the project folder using `cd myproject` in the folder.
 4. Save your source code in the myproject subdirectory.
 5. Run `poetry install` in the parent project folder to generate the poetry.lock file.
 6. Go to the environment by runnig: `poetry shell`. Note: If impossible, use `poetry self add poetry-plugin-shell` first.
@@ -120,16 +120,16 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 | `poetry self add poetry-plugin-shell` | `poetry self add poetry-plugin-shell`    | Installs the shell plugin if `poetry shell` does not work.                                   |
 | `poetry update`                 | `poetry update`                            | Updates packages based on the `pyproject.toml` file.                                         |
 | `poetry add [package-name]`     | `poetry add numpy`                         | Adds a new package to the project.                                                           |
+| `poetry remove [package-name]   | `poetry remove numpy`                      | Removes a package from the project and updates pyproject.toml and poetry.lock.               | 
 | `poetry env info`               | `poetry env info`                          | Displays basic information about the virtual environment.                                    |
 
 **Frequently used package installation**
 | **Command**                  | **Purpose**                                      |
 |------------------------------|--------------------------------------------------|
-| `poetry add pylint`          | Adds `pylint` to the project.                   |
 | `poetry add pandas`          | Adds `pandas` to the project. Automatically installs `numpy` as a dependency. |
-| `poetry add sympy`           | Adds `sympy` to the project.                    |
-| `poetry add scipy`           | Adds `scipy` to the project.                    |
 | `poetry add matplotlib`      | Adds `matplotlib` to the project.               |
+| `poetry add seaborn`           | Adds `seaborn` to the project.                    |
+| `poetry add requests`           | Adds `requests` to the project.                    |
 
 
 ## Knowledge
