@@ -104,6 +104,7 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 7. Install packages, such as numpy, by running `poetry add numpy` (this can also be done from the VS Code terminal).
 8. Exit the virtual environment by running: `deactivate`  
 
+**Frequently used prompts** 
 | **Command**                     | **Example**                                | **Purpose**                                                                                   |
 |----------------------------------|--------------------------------------------|-----------------------------------------------------------------------------------------------|
 | **pyenv**                       |                                            |                                                                                               |
@@ -120,6 +121,15 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 | `poetry update`                 | `poetry update`                            | Updates packages based on the `pyproject.toml` file.                                         |
 | `poetry add [package-name]`     | `poetry add numpy`                         | Adds a new package to the project.                                                           |
 | `poetry env info`               | `poetry env info`                          | Displays basic information about the virtual environment.                                    |
+
+**Frequently used package installation**
+| **Command**                  | **Purpose**                                      |
+|------------------------------|--------------------------------------------------|
+| `poetry add pylint`          | Adds `pylint` to the project.                   |
+| `poetry add pandas`          | Adds `pandas` to the project. Automatically installs `numpy` as a dependency. |
+| `poetry add sympy`           | Adds `sympy` to the project.                    |
+| `poetry add scipy`           | Adds `scipy` to the project.                    |
+| `poetry add matplotlib`      | Adds `matplotlib` to the project.               |
 
 
 ## Knowledge
