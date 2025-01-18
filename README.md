@@ -1,4 +1,4 @@
-# python-environment-setup
+# Python Environment Setup
 Guide for setting up Python on Windows 11
 
 ## 1. Context
@@ -16,43 +16,46 @@ Guide for setting up Python on Windows 11
 - 'pyenv' for Python's version management
 - 'poetry' for modules version management  
 Merit: It is possible to convey this virtual environment to others with this method.
-### Also, the following method is for novices
+### Also, the following method is for novices, but I didn't explain about this here.
 - 'pyenv' for Python's version management 
 - 'venv' for modules version management  
 Demerit: It is difficult to convey this virtual environment to others with this method.
 
 ### Process Menu
-#### --- Process Flow for the first time ---
+#### --- Process Flow for the first time (Chapter 4) ---
 4-1. Uninstall Anaconda  
 4-2. Check the current state  
 4-3. Install pyenv  
 4-4. Install poetry  
 
-#### --- Process Flow to make a new project from the second time ---
+#### --- Process Flow to make a new project from the second time (Chapter 5) ---
 
-## 4. Uninstall Anaconda
+---
+
+## 4. Process Flow for the first time
+### 4-1. Uninstall Anaconda
 1. Open Anaconda Prompt using the Windows search
 ![anaconda prompt](https://github.com/user-attachments/assets/b5e0e885-e7c4-4d0b-8b02-438971892016)
-3. Install anaconda-clean package
+2. Install anaconda-clean package
    `conda install anaconda-clean`
    When asked "Proceed([y]/n)?", enter y and press Enter.  
-4. Conduct anaconda-clean
+3. Conduct anaconda-clean
    `anaconda-clean --yes`  
    -- yes means to skip to be asked for confirmation of each module for uninstallation.
    Got a backup automatically like C:\Users\username\.anaconda_backup\2025-01-17T094734 
-5. Open explore and delete anaconda3\envs folder and anaconda3\pkgs in user folder  (Note: The anaconda3 folder might be named anaconda in some formats.)
+4. Open explore and delete anaconda3\envs folder and anaconda3\pkgs in user folder  (Note: The anaconda3 folder might be named anaconda in some formats.)
 ![delete files](https://github.com/user-attachments/assets/e2c4a377-d294-46a8-a1c1-2a431ce735fc)
-6. Unistall anaconda
+5. Unistall anaconda
 ![uninstall anaconda](https://github.com/user-attachments/assets/9a7bb7a4-0bbb-41e7-b2b4-ae6d0b2ad4b1)
 
-## 5. Check The Current State - python, pyenv, poetry
+### 4-2. Check The Current State - python, pyenv, poetry
 Checking the versions
 - `python --version`
 - `pyenv --version`
 - `poetry --version`
 ![versions check](https://github.com/user-attachments/assets/24cd4872-f6ce-4285-a103-acd1a7ac7f8c)
 
-## 6. Install pyenv
+### 4-3. Install pyenv
 1. Launch Windows PowerShell as Administrator
 2. Use `Set-ExecutionPolicy RemoteSigned`, to enable to install pyenv on Windows PowerShell normal mode
 3. Open Windows PowerShell as the normal version
@@ -65,12 +68,12 @@ Checking the versions
 9. Use pyenv versions to check the Python versions used currently
 10. Use `python --version` to check the Python versions used currently as well
 
-## 7. Install poetry
+### 4-4. Install poetry
 1. Open PowerShell and run the following command to install Poetry: `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -`
 2. Configure the system Path by adding %APPDATA%\Python\Scripts as a new entry
 3. Close and reopen PowerShell.
 4. Verify the installation by running: `poetry -V` or `poetry --version`
-5. Set the default behavior to manage packages per project by running: `poetry config virtualenvs.in-project true`
+5. Set the default to manage packages per project by running: `poetry config virtualenvs.in-project true`
 6. Navigate to the project folder: `cd C:\Users\username\Desktop\environment_test`
 9. Create a new Poetry project: `poetry new myproject`
 10. Change into the newly created project directory: `cd myproject`
@@ -88,11 +91,10 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
     Reddit discussion: https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/  
     Plugin documentation: https://python-poetry.org/docs/cli/#script-project  
     Github Document: https://github.com/python-poetry/poetry-plugin-shell
-17. To run your Python script, enter the virtual environment with poetry shell and use the following command in the VS Code terminal: `python myproject\script.py`
+17. To run your Python script, use the following command in the VS Code terminal in the virtual environment: `python myproject\script.py` (example)
 18. Exit the virtual environment by running: `deactivate`
 
-
-## 8. Process Flow to make a new project from the second time
+## 5. Process Flow to make a new project from the second time
 1. Create a folder.
 2. Run `poetry new myproject` to create a new Poetry project.
 3. Navigate to the project folder using `cd myproject`.
@@ -100,7 +102,25 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 5. Run `poetry install` in the parent project folder to generate the poetry.lock file.
 6. Go to the environment by runnig: `poetry shell`. Note: If impossible, use `poetry self add poetry-plugin-shell` first.
 7. Install packages, such as numpy, by running `poetry add numpy` (this can also be done from the VS Code terminal).
-8. Exit the virtual environment by running: `deactivate`
+8. Exit the virtual environment by running: `deactivate`  
+
+| **Command**                     | **Example**                                | **Purpose**                                                                                   |
+|----------------------------------|--------------------------------------------|-----------------------------------------------------------------------------------------------|
+| **pyenv**                       |                                            |                                                                                               |
+| `pyenv install [version]`       | `pyenv install 3.12.3`                     | Installs the specified Python version.                                                       |
+| `pyenv versions`                | `pyenv versions`                           | Lists all installed Python versions.                                                         |
+| `pyenv global [version]`        | `pyenv global 3.12.3`                      | Sets the specified Python version as the global default.                                      |
+| `pyenv local [version]`         | `pyenv local 3.12.3`                       | Sets the specified Python version for the current project folder.                            |
+| **poetry**                      |                                            |                                                                                               |
+| `poetry new [project-name]`     | `poetry new myproject`                     | Creates a new Poetry project.                                                                |
+| `poetry init`                   | `poetry init`                              | Initializes Poetry for an existing project.                                                  |
+| `poetry install`                | `poetry install`                           | Installs dependencies and generates the `poetry.lock` file.                                   |
+| `poetry shell`                  | `poetry shell`                             | Activates the virtual environment (must be run inside the project folder).                   |
+| `poetry self add poetry-plugin-shell` | `poetry self add poetry-plugin-shell`    | Installs the shell plugin if `poetry shell` does not work.                                   |
+| `poetry update`                 | `poetry update`                            | Updates packages based on the `pyproject.toml` file.                                         |
+| `poetry add [package-name]`     | `poetry add numpy`                         | Adds a new package to the project.                                                           |
+| `poetry env info`               | `poetry env info`                          | Displays basic information about the virtual environment.                                    |
+
 
 ## Knowledge
 - Don't use pip and conda at the same time. Both are version management tools, so they can confuse systems.
@@ -127,4 +147,5 @@ https://python-poetry.org/docs/#installing-with-the-official-installer
 https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/
 https://python-poetry.org/docs/cli/#script-project
 https://github.com/python-poetry/poetry-plugin-shell
-
+- 【Poetry】Poetryのチートシート
+https://qiita.com/uchksh/items/b027a3200fd5171caeb8
