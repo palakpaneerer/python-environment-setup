@@ -128,7 +128,7 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 1. Install Python 3.9.13 using pyenv: `pyenv install 3.9.13` and `pyenv global 3.9.13`
 2. Add kaleido to your project: `poetry add kaleido==0.2.1`
 3. Manually edit the pyproject.toml file as follows (Highlighted changes):
-   ```[project]  
+   `[project]  
 name = "myproject"  
 version = "0.1.0"  
 description = ""  
@@ -140,7 +140,7 @@ requires-python = ">=3.9,<3.13"  # **Modified**
 dependencies = [  
     "pycaret==3.3.2",           # **Added**  
     "kaleido==0.2.1"  
-]```  
+]`  
 4. Install the "Jupyter" extension in VSCode.
 5. Create a Jupyter Notebook file (jupyter_notebook.ipynb) in the myproject subdirectory.
 6. Add the ipykernel package to your virtual environment: `poetry add ipykernel`
