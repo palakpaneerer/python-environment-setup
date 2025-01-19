@@ -154,11 +154,11 @@ Checking the versions
 - 初心者は何を使えばいい？【Pythonの仮想環境を比較】〜オススメを紹介 〜  
   English: What should I use for the Python Environment Creation.
 https://www.youtube.com/watch?v=r4SkIhQThe0&t=31s  
-- 【Mac大手術】ぐちゃぐちゃだったPythonの環境構築をやり直した話【さよならAnaconda】
+- 【Mac大手術】ぐちゃぐちゃだったPythonの環境構築をやり直した話【さよならAnaconda】  
   English: How I rebuilt my messy Python environment  
 https://qiita.com/A7_data/items/88e3f5f3428744ff3473
-- Windows11でAnaconda（Python）を完全にアンインストールする方法
-  How to uninstall Anaconda with Windows11 completely.  
+- Windows11でAnaconda（Python）を完全にアンインストールする方法  
+  English: How to uninstall Anaconda with Windows11 completely.  
 https://mochi-mochi-mochiko.com/windows11-anaconda-uninstall/#toc2
 - Install pyenv-win  
 https://github.com/pyenv-win/pyenv-win
@@ -171,9 +171,10 @@ https://github.com/python-poetry/poetry-plugin-shell
 - 【Poetry】Poetryのチートシート  
   English: Poetry Cheat Sheet  
 https://qiita.com/uchksh/items/b027a3200fd5171caeb8
-- Windows 10 + Python + Poetry + pyenv-win の Visual Studio Code で Jupyter Notebook を利用
+- Windows 10 + Python + Poetry + pyenv-win の Visual Studio Code で Jupyter Notebook を利用  
+  English: Use Jupyter Notebook with Windows10 + Python + Poetry + pyenv-win in VSCode  
 https://qiita.com/kerobot/items/3726208cb13532b4d981
-- VSCodeでJupyter Notebookを使ってみた【ゼロからPython勉強してみる】
+- VSCodeでJupyter Notebookを使ってみた【ゼロからPython勉強してみる】  
   English: How to use Notebook with VSCode
 https://qiita.com/starfieldKt/items/ed7dee5142d9d5c177fd  
 **--- The following articles are for the solution of using poetry and pycaret. ---**
