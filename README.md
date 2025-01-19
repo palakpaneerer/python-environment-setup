@@ -1,4 +1,4 @@
-# Python Environment Setup to install pycaret
+# Python Environment Setup to Install pycaret
 Guide for setting up Python on Windows 11 and install pycaret
 
 ## 1. Context
