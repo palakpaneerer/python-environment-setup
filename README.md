@@ -21,15 +21,6 @@ Merit: It is possible to convey this virtual environment to others with this met
 - 'venv' for modules version management  
 Demerit: It is difficult to convey this virtual environment to others with this method.
 
-### Process Menu
-#### --- Process Flow for the first time (Chapter 4) ---
-4-1. Uninstall Anaconda  
-4-2. Check the current state  
-4-3. Install pyenv  
-4-4. Install poetry  
-
-#### --- Process Flow to make a new project from the second time (Chapter 5) ---
-
 ---
 
 ## 4. Process Flow for the first time
@@ -132,6 +123,58 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 | `poetry add seaborn`           | Adds `seaborn` to the project.                    |
 | `poetry add requests`           | Adds `requests` to the project.                    |
 
+## 6. How to install pycaret
+Here, we use VSCode, Jupyter Notebook, Poetry, Pyenv, and PyCaret.　　
+**Note:**  PyCaret and Poetry don't work well together. Even with matching Python versions, nonsensical errors may occur. However, the following method allows PyCaret to be installed using Poetry.
+1. `pyenv install 3.9.13`
+2. `pyenv grobal 3.9.13`
+3. `poetry add kaleido==0.2.1`
+4. pyproject.tomlファイルを以下の様に手動で入力（**私は太字を変更した**）
+[project]
+name = "myproject"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "[username]",email = "[emailaddress]"}
+]
+readme = "README.md"
+requires-python = "**>=3.9,<3.13**"
+dependencies = [
+    **"pycaret==3.3.2",**
+    "kaleido (==0.2.1)"
+5. VScodeでJupyterを拡張としてinstall
+6. jupyter_notebbk.ipynbと.ipynb拡張子でmyprojectサブディレクトリー内で作成
+7. 仮想環境内でpoetry add ipykernel
+8. poetry run python -m ipykernel install --user --name=your_env_name --display-name "Python (myproject-py3.9)"を使用してkernelに現在の仮想環境を登録
+9. VScodeを再起動
+10. 右上のカーネルを選択にて登録した仮想環境を選択する。
+11. VScode上のjupyter_notebbk.ipynbにて、`from pycaret.regression import *`
+
+## 6. How to Install PyCaret with Poetry in VSCode and Jupyter Notebook
+**Note:** PyCaret and Poetry may not work well together, causing errors even with matching Python versions. Follow these steps to successfully install PyCaret using Poetry:
+1. Install Python 3.9.13 using pyenv: `pyenv install 3.9.13` and `pyenv global 3.9.13`
+2. Add kaleido to your project: `poetry add kaleido==0.2.1`
+3. Manually edit the pyproject.toml file as follows (Highlighted changes):
+   ```[project]
+name = "myproject"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "[username]", email = "[emailaddress]"}
+]
+readme = "README.md"
+requires-python = ">=3.9,<3.13"  # **Modified**
+dependencies = [
+    "pycaret==3.3.2",           # **Added**
+    "kaleido==0.2.1"
+]```
+4. Install the "Jupyter" extension in VSCode.
+5. Create a Jupyter Notebook file (jupyter_notebook.ipynb) in the myproject subdirectory.
+6. Add the ipykernel package to your virtual environment: `poetry add ipykernel`
+7. Register the virtual environment as a Jupyter kernel: `poetry run python -m ipykernel install --user --name=your_env_name --display-name "Python (myproject-py3.9)"`
+8. Restart VSCode
+9. Select the kernel in VScode. Use the kernel selector in the top-right corner to choose your registered virtual environment.
+10. Test PyCaret in jupyter_notebook.ipynb: `from pycaret.regression import *` If there are no errors, it means complete.
 
 ## Knowledge
 - Don't use pip and conda at the same time. Both are version management tools, so they can confuse systems.
@@ -142,13 +185,17 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 - If you uninstall Python, you no longer use pip.
 - If you uninstall Python, pip will also be removed, or at least will no longer work.
 - Even if the pip command remains on your system, it will not work because it does not have the Python to run it.
+- Pycaret is supported with Python 3.9, 3.10 and 3.11. 
 
 ## Reference
 - 初心者は何を使えばいい？【Pythonの仮想環境を比較】〜オススメを紹介 〜  
+  English: What should I use for the Python Environment Creation.
 https://www.youtube.com/watch?v=r4SkIhQThe0&t=31s  
-- 【Mac大手術】ぐちゃぐちゃだったPythonの環境構築をやり直した話【さよならAnaconda】  
+- 【Mac大手術】ぐちゃぐちゃだったPythonの環境構築をやり直した話【さよならAnaconda】
+  English: How I rebuilt my messy Python environment  
 https://qiita.com/A7_data/items/88e3f5f3428744ff3473
-- Windows11でAnaconda（Python）を完全にアンインストールする方法  
+- Windows11でAnaconda（Python）を完全にアンインストールする方法
+  How to uninstall Anaconda with Windows11 completely.  
 https://mochi-mochi-mochiko.com/windows11-anaconda-uninstall/#toc2
 - Install pyenv-win  
 https://github.com/pyenv-win/pyenv-win
@@ -158,7 +205,8 @@ https://python-poetry.org/docs/#installing-with-the-official-installer
 https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/
 https://python-poetry.org/docs/cli/#script-project
 https://github.com/python-poetry/poetry-plugin-shell
-- 【Poetry】Poetryのチートシート
+- 【Poetry】Poetryのチートシート  
+  English: Poetry Cheat Sheet  
 https://qiita.com/uchksh/items/b027a3200fd5171caeb8
 - Windows 10 + Python + Poetry + pyenv-win の Visual Studio Code で Jupyter Notebook を利用
 https://qiita.com/kerobot/items/3726208cb13532b4d981
