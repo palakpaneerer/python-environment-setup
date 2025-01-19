@@ -141,7 +141,7 @@ requires-python = ">=3.9,<3.13" # **Modified**
 dependencies = [
    "pycaret==3.3.2", # **Added**
    "kaleido==0.2.1"
-] ```
+]```
 
 4. Install the "Jupyter" extension in VSCode.
 5. Create a Jupyter Notebook file (jupyter_notebook.ipynb) in the myproject subdirectory.
