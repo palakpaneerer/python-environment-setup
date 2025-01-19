@@ -123,39 +123,12 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 | `poetry add seaborn`           | Adds `seaborn` to the project.                    |
 | `poetry add requests`           | Adds `requests` to the project.                    |
 
-## 6. How to install pycaret
-Here, we use VSCode, Jupyter Notebook, Poetry, Pyenv, and PyCaret.　　
-**Note:**  PyCaret and Poetry don't work well together. Even with matching Python versions, nonsensical errors may occur. However, the following method allows PyCaret to be installed using Poetry.
-1. `pyenv install 3.9.13`
-2. `pyenv grobal 3.9.13`
-3. `poetry add kaleido==0.2.1`
-4. pyproject.tomlファイルを以下の様に手動で入力（**私は太字を変更した**）
-[project]
-name = "myproject"
-version = "0.1.0"
-description = ""
-authors = [
-    {name = "[username]",email = "[emailaddress]"}
-]
-readme = "README.md"
-requires-python = "**>=3.9,<3.13**"
-dependencies = [
-    **"pycaret==3.3.2",**
-    "kaleido (==0.2.1)"
-5. VScodeでJupyterを拡張としてinstall
-6. jupyter_notebbk.ipynbと.ipynb拡張子でmyprojectサブディレクトリー内で作成
-7. 仮想環境内でpoetry add ipykernel
-8. poetry run python -m ipykernel install --user --name=your_env_name --display-name "Python (myproject-py3.9)"を使用してkernelに現在の仮想環境を登録
-9. VScodeを再起動
-10. 右上のカーネルを選択にて登録した仮想環境を選択する。
-11. VScode上のjupyter_notebbk.ipynbにて、`from pycaret.regression import *`
-
 ## 6. How to Install PyCaret with Poetry in VSCode and Jupyter Notebook
 **Note:** PyCaret and Poetry may not work well together, causing errors even with matching Python versions. Follow these steps to successfully install PyCaret using Poetry:
 1. Install Python 3.9.13 using pyenv: `pyenv install 3.9.13` and `pyenv global 3.9.13`
 2. Add kaleido to your project: `poetry add kaleido==0.2.1`
 3. Manually edit the pyproject.toml file as follows (Highlighted changes):
-   ```[project]
+   ``[project]
 name = "myproject"
 version = "0.1.0"
 description = ""
@@ -167,7 +140,7 @@ requires-python = ">=3.9,<3.13"  # **Modified**
 dependencies = [
     "pycaret==3.3.2",           # **Added**
     "kaleido==0.2.1"
-]```
+]``
 4. Install the "Jupyter" extension in VSCode.
 5. Create a Jupyter Notebook file (jupyter_notebook.ipynb) in the myproject subdirectory.
 6. Add the ipykernel package to your virtual environment: `poetry add ipykernel`
