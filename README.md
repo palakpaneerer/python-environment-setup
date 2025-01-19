@@ -129,7 +129,7 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 2. Add kaleido to your project: `poetry add kaleido==0.2.1`
 3. Manually edit the pyproject.toml file as follows (Highlighted changes):
 
-``` [project]
+```[project]
 name = "myproject" 　
 version = "0.1.0"
 description = ""
