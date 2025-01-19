@@ -128,7 +128,7 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 1. Install Python 3.9.13 using pyenv: `pyenv install 3.9.13` and `pyenv global 3.9.13`
 2. Add kaleido to your project: `poetry add kaleido==0.2.1`
 3. Manually edit the pyproject.toml file as follows (Highlighted changes):
-   ```[project]  
+   `[project]  
 name = "myproject"  
 version = "0.1.0"  
 description = ""  
@@ -183,3 +183,13 @@ https://github.com/python-poetry/poetry-plugin-shell
 https://qiita.com/uchksh/items/b027a3200fd5171caeb8
 - Windows 10 + Python + Poetry + pyenv-win の Visual Studio Code で Jupyter Notebook を利用
 https://qiita.com/kerobot/items/3726208cb13532b4d981
+
+
+``` [project] name = "myproject" 　
+version = "0.1.0"
+description = ""
+authors = [ {name = "[username]", email = "[emailaddress]"} ]
+readme = "README.md"
+requires-python = ">=3.9,<3.13" # **Modified**
+dependencies = [ "pycaret==3.3.2", # **Added**
+"kaleido==0.2.1" ] ```
