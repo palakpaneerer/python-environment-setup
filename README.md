@@ -6,7 +6,7 @@ Guide for setting up Python on Windows 11
 - Experience with Data Analysis and Personal Product Development
 - Adhoc Environment Setup based on various online articles (Problem)
 - Installation failure of 'pycaret' made me aware of the importance of a structured approach
-
+  
 ## 2. Goals
 1. Creating a clean environment
 2. Documenting the setup process of a virtual environment
@@ -34,7 +34,7 @@ Demerit: It is difficult to convey this virtual environment to others with this 
    `anaconda-clean --yes`  
    -- yes means to skip to be asked for confirmation of each module for uninstallation.
    Got a backup automatically like C:\Users\username\.anaconda_backup\2025-01-17T094734 
-4. Open explore and delete anaconda3\envs folder and anaconda3\pkgs in user folder  (Note: The anaconda3 folder might be named anaconda in some formats.)
+4. Open explore and delete anaconda3\envs folder and anaconda3\pkgs in user folder  (**Note:** The anaconda3 folder might be named anaconda in some formats.)
 ![delete files](https://github.com/user-attachments/assets/e2c4a377-d294-46a8-a1c1-2a431ce735fc)
 5. Unistall anaconda
 ![uninstall anaconda](https://github.com/user-attachments/assets/9a7bb7a4-0bbb-41e7-b2b4-ae6d0b2ad4b1)
@@ -70,14 +70,14 @@ Checking the versions
 10. Change into the newly created project directory: `cd myproject`
 11. Save your source code in the myproject subdirectory
 12. Run the following command in the parent project folder to generate the poetry.lock file: `poetry install`  
-    Note: Do not manually edit the poetry.lock file, as it is managed by Poetry.
+    **Note:** Do not manually edit the poetry.lock file, as it is managed by Poetry.
 13. Install packages using Poetry: `poetry add numpy` and `poetry add requests==2.32.2`
 14. Uninstall a package if needed: `poetry remove requests`
 15. Key files managed by Poetry:  
-pyproject.toml: Defines the required packages for the project. You can manually edit this file to update package versions (e.g., "numpy==2.2.1") and run `poetry update` to apply changes.  
-poetry.lock: Stores the exact versions of installed packages. This file should not be manually edited.  
+**pyproject.toml:** Defines the required packages for the project. You can manually edit this file to update package versions (e.g., "numpy==2.2.1") and run `poetry update` to apply changes.  
+**poetry.lock:** Stores the exact versions of installed packages. This file should not be manually edited.  
 16. Enter the project’s virtual environment: `poetry shell`  
-    Note: If this command fails, you need to install the poetry-plugin-shell plugin: `poetry self add poetry-plugin-shell`  
+    **Note:** If this command fails, you need to install the poetry-plugin-shell plugin: `poetry self add poetry-plugin-shell`  
     For more information on enabling the poetry shell command:  
     Reddit discussion: https://www.reddit.com/r/learnpython/comments/1hxftvw/poetry_shell_the_command_shell_does_not_exist/  
     Plugin documentation: https://python-poetry.org/docs/cli/#script-project  
@@ -87,11 +87,12 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 
 ## 5. Process Flow to make a new project from the second time
 1. Create a folder.
-2. Run `poetry new myproject` to create a new Poetry project.
-3. Navigate to the project folder using `cd myproject` in the folder.
-4. Save your source code in the myproject subdirectory.
+2. Enter the folder. And check the Python version currently used.: `pyenv versions` (If you want to change it, please do it now.)
+3. Run `poetry new myproject` to create a new Poetry project.
+4. Navigate to the project folder using `cd myproject` in the folder.  
+   **Note:** Save your source code in the myproject subdirectory.
 5. Run `poetry install` in the parent project folder to generate the poetry.lock file.
-6. Go to the environment by runnig: `poetry shell`. Note: If impossible, use `poetry self add poetry-plugin-shell` first.
+6. Go to the environment by runnig: `poetry shell`. **Note:** If impossible, use `poetry self add poetry-plugin-shell` first.
 7. Install packages, such as numpy, by running `poetry add numpy` (this can also be done from the VS Code terminal).
 8. Exit the virtual environment by running: `deactivate`  
 
@@ -127,29 +128,16 @@ poetry.lock: Stores the exact versions of installed packages. This file should n
 **Note:** PyCaret and Poetry may not work well together, causing errors even with matching Python versions. Follow these steps to successfully install PyCaret using Poetry:
 1. Install Python 3.9.13 using pyenv: `pyenv install 3.9.13` and `pyenv global 3.9.13`
 2. Add kaleido to your project: `poetry add kaleido==0.2.1`
-3. Manually edit the pyproject.toml file as follows (Highlighted changes):
-
-```[project]
-name = "myproject" 　
-version = "0.1.0"
-description = ""
-authors = [
-   {name = "[username]", email = "[emailaddress]"}
-]
-readme = "README.md"
-requires-python = ">=3.9,<3.13" # **Modified**
-dependencies = [
-   "pycaret==3.3.2", # **Added**
-   "kaleido==0.2.1"
-]```
-
-4. Install the "Jupyter" extension in VSCode.
-5. Create a Jupyter Notebook file (jupyter_notebook.ipynb) in the myproject subdirectory.
-6. Add the ipykernel package to your virtual environment: `poetry add ipykernel`
-7. Register the virtual environment as a Jupyter kernel: `poetry run python -m ipykernel install --user --name=your_env_name --display-name "Python (myproject-py3.9)"`
-8. Restart VSCode
-9. Select the kernel in VScode. Use the kernel selector in the top-right corner to choose your registered virtual environment.
-10. Test PyCaret in jupyter_notebook.ipynb: `from pycaret.regression import *` If there are no errors, it means complete.
+3. Manually edit the pyproject.toml file as follows (Yellow parts were changed):  
+![tomlfile](https://github.com/user-attachments/assets/0d0d0d51-6e8f-4067-a2c7-6df27eb17aee)
+4. Update the package installation and those versions based on the toml file: `poetry update`
+5. Install the "Jupyter" extension in VSCode.
+6. Create a Jupyter Notebook file (jupyter_notebook.ipynb) in the myproject subdirectory.
+7. Add the ipykernel package to your virtual environment: `poetry add ipykernel`
+8. Register the virtual environment as a Jupyter kernel: `poetry run python -m ipykernel install --user --name=your_env_name --display-name "Python (myproject-py3.9)"`
+9. Restart VSCode
+10. Select the kernel in VScode. Use the kernel selector in the top-right corner to choose your registered virtual environment.
+11. Test PyCaret in jupyter_notebook.ipynb: `from pycaret.regression import *` If there are no errors, it means complete.
 
 ## Knowledge
 - Don't use pip and conda at the same time. Both are version management tools, so they can confuse systems.
@@ -185,3 +173,15 @@ https://github.com/python-poetry/poetry-plugin-shell
 https://qiita.com/uchksh/items/b027a3200fd5171caeb8
 - Windows 10 + Python + Poetry + pyenv-win の Visual Studio Code で Jupyter Notebook を利用
 https://qiita.com/kerobot/items/3726208cb13532b4d981
+- VSCodeでJupyter Notebookを使ってみた【ゼロからPython勉強してみる】
+  English: How to use Notebook with VSCode
+https://qiita.com/starfieldKt/items/ed7dee5142d9d5c177fd  
+**--- The following articles are for the solution of using poetry and pycaret. ---**
+- [ENH]: Poetry and Pycaret don't work together #3624  
+https://github.com/pycaret/pycaret/issues/3624  
+- Why can't I install a Python package with the Python requirement ">=3.8,<3.11" into a Poetry project with the Python version "^3.9"?  
+https://stackoverflow.com/questions/73116647/why-cant-i-install-a-python-package-with-the-python-requirement-3-8-3-11-i  
+- How to add kaleido package to poetry.lock file?  
+https://stackoverflow.com/questions/70993385/how-to-add-kaleido-package-to-poetry-lock-file  
+Writing your pyproject.toml  
+https://packaging.python.org/en/latest/guides/writing-pyproject-toml/  
