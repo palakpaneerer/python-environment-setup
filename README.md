@@ -1,5 +1,5 @@
-# Python Environment Setup
-Guide for setting up Python on Windows 11
+# Python Environment Setup to install pycaret
+Guide for setting up Python on Windows 11 and install pycaret
 
 ## 1. Context
 - Two years of experience with Python
